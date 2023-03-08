@@ -1,0 +1,9 @@
+project:
+  output-dir: _docs
+
+website:
+  title: "scAnnot"
+  site-url: "https://changebio.github.io/scAnnot"
+  description: "single cell annotation"
+  repo-branch: main
+  repo-url: "https://github.com/changebio/scAnnot"
