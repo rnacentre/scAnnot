@@ -4,12 +4,13 @@
 __all__ = ['scAnnot']
 
 # %% ../nbs/00_core.ipynb 4
+import numpy as np
 import scanpy as sc
 import scvi
 from fastcore.script import *
 import warnings
 
-# %% ../nbs/00_core.ipynb 6
+# %% ../nbs/00_core.ipynb 13
 @call_parse
 def scAnnot(h5:str, #the input h5ad file, must have row counts in X or layers
             output:str = None, # The path of output file. 1. None->output AnnData object with predicted labels, 2. a path end with h5ad->write out the AnnData. 3. a path end with csv-> write out the table of predicted labels. 
@@ -20,7 +21,17 @@ def scAnnot(h5:str, #the input h5ad file, must have row counts in X or layers
    
     if 'counts' not in ad.layers.keys():
         ad.layers['counts']=ad.X
-
+    arr=ad.layers['counts'].data
+    if not np.array_equal(arr, np.round(arr)):
+        raise ValueError("Not all counts are integers")
+    
+    #concatenate query and ref
+    ref=sc.read('/home/huang_yin/projA/scBERT/model/reference_genes.h5ad')
+    ad=ad[:,ad.var.index.isin(ref.var.index)]
+    print(f'{ad.shape[1]} of genes are found in ref genes (total {ref.shape[1]}). The percentage is {ad.shape[1]/ref.shape[1]}')
+    ad=ad.concatenate(ref,join='outer')[1:] #remove ref cell
+    if not ad.var.index.equals(ref.var.index):
+        raise ValueError("The order of gene are not the same between query and reference")
     model=scvi.model.SCANVI.load_query_data(
             ad,
             '/home/huang_yin/projA/scBERT/model/twostep_2layer_subgenes/scanvi_3_epoch_model/',
