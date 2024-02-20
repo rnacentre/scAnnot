@@ -143,7 +143,7 @@ the UMAP plot for the level1 annotation:
 ![level1](https://github.com/rnacentre/scAnnot/blob/master/img/level1.png)
 
 the UMAP plot for the original annotation:
-![original](https://github.com/rnacentre/scAnnot/blob/master/img/level1.png)
+![original](https://github.com/rnacentre/scAnnot/blob/master/img/original.png)
 
 ## Additional Details
 
@@ -161,5 +161,12 @@ the UMAP plot for the original annotation:
     formats, depending on the output name. By default, CSV format is
     used for output files, but you can specify other formats such as TXT
     or H5ad if desired.
+
+## References
+
+For citation and further information please refer to the Research Square
+preprint: Chen, X. et al. Brain Cell Atlas: An integrative ensemble of
+cell transcriptomes across human brain regions. Research Square (2023)
+doi:10.21203/rs.3.rs-3221500/v1.
 
 **Let me know if you have any other questions!**
