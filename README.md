@@ -152,4 +152,4 @@ show the UMAP plot:
     used for output files, but you can specify other formats such as TXT
     or H5ad if desired.
 
-Let me know if you have any other questions!
+**Let me know if you have any other questions!**
