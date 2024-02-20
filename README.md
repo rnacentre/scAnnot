@@ -126,20 +126,24 @@ usage:
 
 **1. output the table of predicted lables in csv format**
 
-    scAnnot human_brain_glial_Fu_2021_PCR/h5/umap.h5ad --output test.csv
+    scAnnot test.h5ad --reference ref.h5ad --output test.csv
 
 **2. output the anndata with predicted lables in h5ad**
 
-    scAnnot human_brain_glial_Fu_2021_PCR/h5/umap.h5ad --output test.h5ad
+    scAnnot test.h5ad --reference ref.h5ad --output test.h5ad
 
 ### In jupyter notebook
 
-    ad=scAnnot('human_brain_glial_Fu_2021_PCR/h5/umap.h5ad')
+    ad=scAnnot('test.h5ad', 'ref.h5ad')
 
     #show umap from the latent space
-    ad=scAnnot('human_brain_glial_Fu_2021_PCR/h5/umap.h5ad',show=True)
+    ad=scAnnot('test.h5ad', 'ref.h5ad', show=True)
 
-show the UMAP plot:
+the UMAP plot for the level1 annotation:
+![level1](https://github.com/rnacentre/scAnnot/blob/master/img/level1.png)
+
+the UMAP plot for the original annotation:
+![original](https://github.com/rnacentre/scAnnot/blob/master/img/level1.png)
 
 ## Additional Details
 
