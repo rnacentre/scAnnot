@@ -169,4 +169,7 @@ preprint: Chen, X. et al. Brain Cell Atlas: An integrative ensemble of
 cell transcriptomes across human brain regions. Research Square (2023)
 doi:10.21203/rs.3.rs-3221500/v1.
 
-**Let me know if you have any other questions!**
+## Issues
+
+Let me know if you have any other questions! Please submit any issues or
+questions as GitHub issues.
