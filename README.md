@@ -19,6 +19,19 @@ It generates annotated labels by leveraging cell representations learned
 from the reference dataset. The modular workflow is highly customizable
 and scalable to large datasets.
 
+## Dependency
+
+    numpy
+    pandas
+    matplotlib
+    scanpy
+    anndata
+    scipy
+    tqdm
+    pathlib
+    fastcore
+    scvi-tools
+
 ## Installation
 
 To install scAnnot, please follow these steps:
@@ -162,12 +175,11 @@ the UMAP plot for the original annotation:
     used for output files, but you can specify other formats such as TXT
     or H5ad if desired.
 
-## References
+## Citation
 
-For citation and further information please refer to the Research Square
-preprint: Chen, X. et al. Brain Cell Atlas: An integrative ensemble of
-cell transcriptomes across human brain regions. Research Square (2023)
-doi:10.21203/rs.3.rs-3221500/v1.
+Chen, X., Huang, Y., Huang, L. et al. A brain cell atlas integrating
+single-cell transcriptomes across human brain regions. Nat Med 30,
+2679–2691 (2024). https://doi.org/10.1038/s41591-024-03150-z
 
 ## Issues
 
